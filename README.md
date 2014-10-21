@@ -13,6 +13,7 @@ benefit from it.
 
 ###How to Use
 * [Hello L#]
+
 It's quite easy to make L# on the go. The following tutorial gives a simple
 example on how to write a "Hello World" in L#.
 
@@ -24,6 +25,7 @@ lsharp.Execute();                              // Let's rock!
 ```
 
 * [Variable]
+
 ```
 (var a "hello world") # Declare a variable "a" and initialize with a string.
 (set a "changed")     # Set "a" with a new value.
@@ -31,6 +33,7 @@ lsharp.Execute();                              // Let's rock!
 ```
 
 * [Evaluation]
+
 L# use prefix expression for evaluation.
 
 ```
@@ -41,6 +44,7 @@ L# use prefix expression for evaluation.
 ```
 
 * [List Operation]
+
 ```
 (printl (list 1 2 3))        # Construct a list.
 (printl (cons 1 (list 2 3))) # Join expressions into a list.
@@ -49,6 +53,7 @@ L# use prefix expression for evaluation.
 ```
 
 * [Dictionary Operation]
+
 ```
 (var d (dict "a" 1 "b" 2 "c" 3)) # Construct a dictionary with ("a": 1, "b": 2, "c": 3).
 (! d + "b" 3.14)                 # Set "b" with 3.14.
@@ -60,6 +65,7 @@ sending statement is (! object message optional_arguments). A message can be a
 property/method of a .NET object or a buildin function of an L# object.
 
 * [Use a Function]
+
 L# supports user defined function with pattern (def func_name (par0 par1 ... par_n) (func_body)).
 
 ```
@@ -70,6 +76,7 @@ L# supports user defined function with pattern (def func_name (par0 par1 ... par
 ```
 
 * [Lambda Expression]
+
 ```
 (var c 0)               # A global variable.
 (var counter (lambda () # Declare a lambda.
@@ -82,6 +89,7 @@ L# supports user defined function with pattern (def func_name (par0 par1 ... par
 ```
 
 * [Condition and Iteration]
+
 Single condition.
 
 ```
@@ -124,9 +132,11 @@ Multiple condition.
 ```
 
 * [Import External Library]
+
 Use "import" statement to import functionallities from another L# script or a .NET assembly.
 
 * [Register Host Function]
+
 Search with keyword "Register" in LSharp.cs to get an introduction.
 
 ###TODO
