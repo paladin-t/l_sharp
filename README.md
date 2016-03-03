@@ -17,48 +17,48 @@ benefit from it.
 It's quite easy to make L# on the go. The following tutorial gives a simple
 example on how to write a "Hello World" in L#.
 
-```
+~~~~~~~~~~lisp
 LSharp lsharp = new LSharp();                  // Initialize L#.
 lsharp.Printer = (t) => { print(t); };         // Optional, customize the 'print' statement in Unity3D.
 lsharp.LoadString("(printl \"hello world\")"); // Load and parse a script string.
 lsharp.Execute();                              // Let's rock!
-```
+~~~~~~~~~~
 
 * [Variable]
 
-```
+~~~~~~~~~~lisp
 (var a "hello world") # Declare a variable "a" and initialize with a string.
 (set a "changed")     # Set "a" with a new value.
 (printl a)
-```
+~~~~~~~~~~
 
 * [Evaluation]
 
 L# use prefix expression for evaluation.
 
-```
+~~~~~~~~~~lisp
 (var a 1)             # Declare and set a = 1.
 (var b 2)             # Declare and set b = 2.
 (set a (* (+ a b) b)) # a = (a + b) * b.
 (printl a)
-```
+~~~~~~~~~~
 
 * [List Operation]
 
-```
+~~~~~~~~~~lisp
 (printl (list 1 2 3))        # Construct a list.
 (printl (cons 1 (list 2 3))) # Join expressions into a list.
 (printl (car &(1 2 3)))      # Get the first element of a list, prints "1".
 (printl (cdr &(1 2 3)))      # Get the rest elements after [0], prints "(2 3)".
-```
+~~~~~~~~~~
 
 * [Dictionary Operation]
 
-```
+~~~~~~~~~~lisp
 (var d (dict "a" 1 "b" 2 "c" 3)) # Construct a dictionary with ("a": 1, "b": 2, "c": 3).
 (! d + "b" 3.14)                 # Set "b" with 3.14.
 (printl (! d "b"))               # Fetch the value of key "b".
-```
+~~~~~~~~~~
 
 Note L# uses exclamation mark to send a message to an object, the pattern of a
 sending statement is (! object message optional_arguments). A message can be a
@@ -68,16 +68,16 @@ property/method of a .NET object or a buildin function of an L# object.
 
 L# supports user defined function with pattern (def func_name (par0 par1 ... par_n) (func_body)).
 
-```
+~~~~~~~~~~lisp
 (def foo (a b)
     (+ a b)
 )
 (print (foo 1 2))
-```
+~~~~~~~~~~
 
 * [Lambda Expression]
 
-```
+~~~~~~~~~~lisp
 (var c 0)               # A global variable.
 (var counter (lambda () # Declare a lambda.
     (set c (+ c 1)))
@@ -86,23 +86,23 @@ L# supports user defined function with pattern (def func_name (par0 par1 ... par
 (counter)               # Eval twice.
 (printl (! counter c))  # Fetch the value in a closure.
 (printl c)
-```
+~~~~~~~~~~
 
 * [Condition and Iteration]
 
 Single condition.
 
-```
+~~~~~~~~~~lisp
 (var foo input) # Initialize "foo" with an input.
 (if
     (== foo "1") (print "uno")
     (print "unknown")
 )
-```
+~~~~~~~~~~
 
 Multiple condition.
 
-```
+~~~~~~~~~~lisp
 (var foo input)
 (cond
     (== foo "1") (print "uno")
@@ -110,11 +110,11 @@ Multiple condition.
     (== foo "3") (print "tres")
     nil (print "unknown")
 )
-```
+~~~~~~~~~~
 
 "While" iteration.
 
-```
+~~~~~~~~~~lisp
 (var t 5)
 (while
     (> t 0)
@@ -123,13 +123,13 @@ Multiple condition.
         (set t (- t 1))
     )
 )
-```
+~~~~~~~~~~
 
 "Repeat" iteration.
 
-```
+~~~~~~~~~~lisp
 (repeat 5 &(print "@"))
-```
+~~~~~~~~~~
 
 * [Import External Library]
 
@@ -138,7 +138,3 @@ Use "import" statement to import functionallities from another L# script or a .N
 * [Register Host Function]
 
 Search with keyword "Register" in LSharp.cs to get an introduction.
-
-###TODO
-1. Polish README document.
-2. Write more samples.
