@@ -1,7 +1,7 @@
-L#
-------------
+# L#
 
-###Introduction
+## Introduction
+
 I created L# when I was dedicating in a Unity3D game project in 2012.
 
 L# is a Lisp-like scripting language interpreter for .NET/Mono written with C#.
@@ -11,7 +11,8 @@ You can easily copy the only implementation source file "LSharp.cs" into your
 desktop softwares, console games, smartphone apps, web pages, etc. projects and
 benefit from it.
 
-###How to Use
+## How to Use
+
 * [Hello L#]
 
 It's quite easy to make L# on the go. The following tutorial gives a simple
@@ -70,8 +71,7 @@ L# supports user defined function with pattern (def func_name (par0 par1 ... par
 
 ~~~~~~~~~~lisp
 (def foo (a b)
-    (+ a b)
-)
+    (+ a b))
 (print (foo 1 2))
 ~~~~~~~~~~
 
@@ -80,8 +80,7 @@ L# supports user defined function with pattern (def func_name (par0 par1 ... par
 ~~~~~~~~~~lisp
 (var c 0)               # A global variable.
 (var counter (lambda () # Declare a lambda.
-    (set c (+ c 1)))
-)
+    (set c (+ c 1))))
 (counter)               # Eval once.
 (counter)               # Eval twice.
 (printl (! counter c))  # Fetch the value in a closure.
@@ -96,8 +95,7 @@ Single condition.
 (var foo input) # Initialize "foo" with an input.
 (if
     (== foo "1") (print "uno")
-    (print "unknown")
-)
+    (print "unknown"))
 ~~~~~~~~~~
 
 Multiple condition.
@@ -108,8 +106,7 @@ Multiple condition.
     (== foo "1") (print "uno")
     (== foo "2") (print "dos")
     (== foo "3") (print "tres")
-    nil (print "unknown")
-)
+    nil (print "unknown"))
 ~~~~~~~~~~
 
 "While" iteration.
@@ -118,11 +115,8 @@ Multiple condition.
 (var t 5)
 (while
     (> t 0)
-    (
-        (print "@")
-        (set t (- t 1))
-    )
-)
+		((print "@")
+        (set t (- t 1))))
 ~~~~~~~~~~
 
 "Repeat" iteration.
