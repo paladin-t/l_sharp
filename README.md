@@ -93,8 +93,8 @@ Single condition.
 
 ~~~~~~~~~~lisp
 (var foo input) # Initialize "foo" with an input.
-(if
-    (== foo "1") (print "uno")
+(if (== foo "1")
+    (print "uno")
     (print "unknown"))
 ~~~~~~~~~~
 
@@ -113,10 +113,9 @@ Multiple condition.
 
 ~~~~~~~~~~lisp
 (var t 5)
-(while
-    (> t 0)
-		((print "@")
-        (set t (- t 1))))
+(while (> t 0)
+    ((print "@")
+    (set t (- t 1))))
 ~~~~~~~~~~
 
 "Repeat" iteration.
